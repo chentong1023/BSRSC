@@ -1,17 +1,18 @@
-name: 000_AdaRSCNet_lr2e4_FastecRS_e401_B1G4
+name: 000_AdaRSCNet_lr2e4_DarkRS_e401_B1G4
 
 dataset:
     train:
-        name: FastecRS
+        name: DarkRS
         mode: train
         time_map: True
 
         sampling: n_c  # "n_n" and "n_c" , "n_l", "n_r"
         overlapping: True
         interval: 1
-        pos: middle  # first
+        pos: GS_0  # first
+        img_type: RGB
         
-        root_gt: ./dataset/FastecRS/train
+        root_gt: ./dataset/DarkRS
         num_frames: 3
         
         # augmentations
@@ -32,16 +33,35 @@ dataset:
             
 
     val:
-        name: FastecRS
+        name: DarkRS
         mode: val
         time_map: True
         
         sampling: n_c  # "n_n" and "n_c" , "n_l", "n_r"
         overlapping: True
         interval: 1
-        pos: middle  # first
+        pos: GS_0  # first
+        img_type: RGB
         
-        root_gt: ./dataset/FastecRS/test
+        root_gt: ./dataset/DarkRS
+        num_frames: 3
+
+        loader:
+            batch_size: 1
+            num_workers: 1
+    
+    test:
+        name: DarkRS
+        mode: test
+        time_map: True
+        
+        sampling: n_c  # "n_n" and "n_c" , "n_l", "n_r"
+        overlapping: True
+        interval: 1
+        pos: GS_0  # first
+        img_type: RGB
+        
+        root_gt: ./dataset/DarkRS
         num_frames: 3
 
         loader:

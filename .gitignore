@@ -5,6 +5,9 @@ build
 *.egg-info
 dist
 *.so
+cuda_11.3.0_465.19.01_linux.run
+
+SimDeblur/
 
 
 # workding directory
@@ -13,3 +16,4 @@ workdir
 # dataset
 dataset/BSRSC
 dataset/FastecRS
+dataset/DarkRS
